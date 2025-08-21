@@ -1,4 +1,4 @@
-package com.example.api_login_svc;
+package com.kt.api_login_svc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
