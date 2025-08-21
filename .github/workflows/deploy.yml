@@ -55,13 +55,13 @@ jobs:
       - name: Deploy container image to App Service
         run: |
           az webapp config container set \
-            --name ${{ secrets.LOGIN_WEBAPP_NAME }} \
+            --name ${{ secrets.WEBAPP_NAME }} \
             --resource-group ${{ secrets.RESOURCE_GROUP }} \
             --docker-custom-image-name $IMAGE_NAME:$IMAGE_TAG \
             --docker-registry-server-url https://index.docker.io
 
       - name: Restart App
-        run: az webapp restart --name ${{ secrets.LOGIN_WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
+        run: az webapp restart --name ${{ secrets.WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
 
       - name: Show App URL
-        run: az webapp show --name ${{ secrets.LOGIN_WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }} --query defaultHostName -o tsv
+        run: az webapp show --name ${{ secrets.WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }} --query defaultHostName -o tsv
